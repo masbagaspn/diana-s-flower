@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react'
 
 function App() {
   const [text, setText] = useState('Hello Diana')
+  const [loaded, setLoaded] = useState(false)
   let width = 100
 
   const textRef = useRef(null)
@@ -24,13 +25,15 @@ function App() {
 
           setTimeout(() => {
             textStyle.display = 'none'
-            flowerStyle.opacity = '0'
-            flowerStyle.display = 'block'
-
-            setTimeout(() => {
-              flowerStyle.opacity = '1'
-              flowerStyle.transition = '1s opacity ease-in-out'        
-            }, 1000)
+            if(loaded) {
+              flowerStyle.opacity = '0'
+              flowerStyle.display = 'block'
+  
+              setTimeout(() => {
+                flowerStyle.opacity = '1'
+                flowerStyle.transition = '1s opacity ease-in-out'        
+              }, 1000)
+            }
           }, 1000)
 
         }, 1500)
@@ -47,7 +50,7 @@ function App() {
   return (
     <div className="App">
       <h1 ref={textRef}>{text}</h1>
-      <img className='flower' ref={flowerRef} src='../images/flowers-01.png' />
+      <img className='flower' ref={flowerRef} src='../images/flowers-01.png' onLoad={() => setLoaded(true)}/>
     </div>
   )
 }
