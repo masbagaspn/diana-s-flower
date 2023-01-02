@@ -12,7 +12,6 @@ body{
 }
 
 h1 {
-  font-size: 72px;
   background: -webkit-linear-gradient(left,#d541b9,#ffc0fe);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -22,6 +21,18 @@ h1 {
   display: none;
   width: 300px;
   animation: rotation 10s infinite linear, scale 10s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+  h1{
+    font-size: 36px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  h1{
+    font-size: 72px;
+  }
 }
 
 @keyframes rotation {
