@@ -25,22 +25,20 @@ function App() {
 
           setTimeout(() => {
             textStyle.display = 'none'
-            if(loaded) {
-              flowerStyle.opacity = '0'
-              flowerStyle.display = 'block'
-  
-              setTimeout(() => {
-                flowerStyle.opacity = '1'
-                flowerStyle.transition = '1s opacity ease-in-out'        
-              }, 1000)
-            }
-          }, 1000)
+            flowerStyle.opacity = '0'
+            flowerStyle.display = 'block'
 
-        }, 1500)
+            setTimeout(() => {
+              flowerStyle.opacity = '1'
+              flowerStyle.transition = '1s opacity ease-in-out'        
+            }, 1000)
+          }, 2000)
 
-      },1000)
+        }, 3000)
 
-    }, 1500)
+      }, 1000)
+
+    }, 3000)
   }
 
   useEffect(() => {
